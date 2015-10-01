@@ -1,0 +1,29 @@
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.Domain\bin\CompanyRosterReg.Domain.dll.config
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.Domain\bin\CompanyRosterReg.Domain.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.Domain\bin\CompanyRosterReg.Domain.pdb
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.Domain\bin\EntityFramework.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.Domain\bin\EntityFramework.SqlServer.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.Domain\bin\EntityFramework.xml
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.Domain\bin\EntityFramework.SqlServer.xml
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.csprojResolveAssemblyReference.cache
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\CompanyRosterReg.Domain.dll.config
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\CompanyRosterReg.Domain.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\CompanyRosterReg.Domain.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\EntityFramework.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\EntityFramework.SqlServer.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\EntityFramework.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\EntityFramework.SqlServer.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\CompanyRosterReg.Domain.dll.config
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\CompanyRosterReg.Domain.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\CompanyRosterReg.Domain.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\EntityFramework.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\EntityFramework.SqlServer.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\EntityFramework.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.Domain\bin\EntityFramework.SqlServer.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.csprojResolveAssemblyReference.cache
