@@ -1,0 +1,31 @@
+﻿@model InvitationModel
+@{
+    ViewBag.Title = "Search Email";
+}
+
+@using (Html.BeginForm("SearchEmail", "Home", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Could not find an existing account for the email address: <strong>@Model.Email</strong></h5>
+            <h5>Please provide one or more additional emails that Brewers Association may know you by and click Search.</h5>
+        </div>
+    </div>
+    <hr />
+    <h3 class="control-label pad-left">Additional Emails:</h3>
+    <p class="clear">
+        @Html.ValidationSummary()
+    </p>
+    if (TempData["NoSearchResults"] != null)
+    {
+        <p class="error-text">@TempData["NoSearchResults"].ToString()</p>
+    }
+    for (int i = 0; i < Model.AdditionalEmails.Count; i++)
+    {
+        <p>@Html.TextBoxFor(m => m.AdditionalEmails[i], null, new { @class = "form-control" })</p>
+    }
+    <p><input name="submit" type="submit" id="search" value="Search" class="btn btn-primary" /></p>
+    <br />
+    <p>@Html.ActionLink("I would like to create a new account.", "NewAccount", "Account", Model, null)</p>
+}
+

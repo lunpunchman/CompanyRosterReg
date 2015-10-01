@@ -1,0 +1,117 @@
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\obj\Debug\CompanyRosterReg.WebUI.csprojResolveAssemblyReference.cache
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\CompanyRosterReg.WebUI.dll.config
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\CompanyRosterReg.WebUI.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\CompanyRosterReg.WebUI.pdb
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Antlr3.Runtime.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\CompanyRosterReg.Domain.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Microsoft.Web.Infrastructure.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Newtonsoft.Json.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Ninject.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.Helpers.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.Mvc.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.Optimization.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.Razor.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.WebPages.Deployment.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.WebPages.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.WebPages.Razor.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\WebGrease.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\EntityFramework.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\CompanyRosterReg.Domain.pdb
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Ninject.xml
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.Helpers.xml
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.Mvc.xml
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.Optimization.xml
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.Razor.xml
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.WebPages.xml
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.WebPages.Deployment.xml
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\System.Web.WebPages.Razor.xml
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Antlr3.Runtime.pdb
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Newtonsoft.Json.xml
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\EntityFramework.xml
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\obj\Debug\CompanyRosterReg.WebUI.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\obj\Debug\CompanyRosterReg.WebUI.pdb
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\EntityFramework.SqlServer.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\EntityFramework.SqlServer.xml
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\BA.iParts.Common.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Asi.Soa.ClientServices.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Asi.Soa.Core.Contracts.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Asi.Soa.ServiceModelEx.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Asi.Soa.Commerce.Contracts.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Asi.Soa.Events.Contracts.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Asi.Soa.Membership.Contracts.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Asi.Soa.Communications.Contracts.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Asi.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\log4net.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\Telerik.Web.UI.dll
+c:\users\brentw\documents\visual studio 2013\Projects\CompanyRosterReg.WebUI\CompanyRosterReg.WebUI\bin\BA.iParts.Common.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\CompanyRosterReg.WebUI.dll.config
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\CompanyRosterReg.WebUI.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\CompanyRosterReg.WebUI.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\Antlr3.Runtime.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\CompanyRosterReg.Domain.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\EntityFramework.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\EntityFramework.SqlServer.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\MVC Foolproof Validation.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\Newtonsoft.Json.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Helpers.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Mvc.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Optimization.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Razor.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.WebPages.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.WebPages.Razor.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\WebGrease.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\Telerik.Web.UI.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\CompanyRosterReg.Domain.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\EntityFramework.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\EntityFramework.SqlServer.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Helpers.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Mvc.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Optimization.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Razor.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.WebPages.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.WebPages.Razor.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\Antlr3.Runtime.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\Newtonsoft.Json.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\obj\Debug\CompanyRosterReg.WebUI.csprojResolveAssemblyReference.cache
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\obj\Debug\CompanyRosterReg.WebUI.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\obj\Debug\CompanyRosterReg.WebUI.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\BA.IMIS.Common.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\BA.IMIS.Common.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\CompanyRosterReg.WebUI.dll.config
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\CompanyRosterReg.WebUI.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\CompanyRosterReg.WebUI.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\Antlr3.Runtime.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\CompanyRosterReg.Domain.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\EntityFramework.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\EntityFramework.SqlServer.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\MVC Foolproof Validation.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\Newtonsoft.Json.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Helpers.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Mvc.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Optimization.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Razor.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.WebPages.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.WebPages.Razor.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\WebGrease.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\CompanyRosterReg.Domain.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\EntityFramework.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\EntityFramework.SqlServer.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Helpers.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Mvc.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Optimization.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.Razor.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.WebPages.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\System.Web.WebPages.Razor.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\Antlr3.Runtime.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\Newtonsoft.Json.xml
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\obj\Debug\CompanyRosterReg.WebUI.csprojResolveAssemblyReference.cache
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\obj\Debug\CompanyRosterReg.WebUI.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\obj\Debug\CompanyRosterReg.WebUI.pdb
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\BA.IMIS.Common.dll
+C:\Users\brentw\Documents\Visual Studio 2013\Projects\IMIS Projects\CompanyRosterReg\CompanyRosterReg.WebUI\bin\BA.IMIS.Common.pdb
