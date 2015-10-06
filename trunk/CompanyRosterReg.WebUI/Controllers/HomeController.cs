@@ -38,7 +38,8 @@ namespace CompanyRosterReg.WebUI.Controllers
                 }
                 else
                 {
-                    //We have to RedirectToAction here since we're specifying a different view ("SearchEmail"). Thus, the action "SearchEmail" expects to return a view called "SearchEmail".
+                    //We have to RedirectToAction here since we're specifying a view ("SearchEmail") that is different from this action ("Index"). 
+                    //Thus, the action "SearchEmail" expects to return a view called "SearchEmail".
                     //If you try to just return View("SearchEmail", invitationModel), it may appear to work intermittently, but MVC is actually just confused.
                     return RedirectToAction("SearchEmail");
                 }

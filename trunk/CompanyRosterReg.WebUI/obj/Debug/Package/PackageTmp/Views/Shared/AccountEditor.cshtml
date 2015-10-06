@@ -10,7 +10,7 @@
     </div>
     <div class="row">
         @Html.LabelFor(m => m.MiddleName, new { @class = "col-lg-2 control-label" })
-        @Html.TextBoxFor(m => m.MiddleName, GetHtmlAttributes(Model.MiddleName != null,"col-lg-10 form-control" ))
+        @Html.TextBoxFor(m => m.MiddleName, GetHtmlAttributes(Model.MiddleName != null, "col-lg-10 form-control" ))
     </div>
     <div class="row">
         @Html.LabelFor(m => m.LastName, new { @class = "col-lg-2 control-label" })
