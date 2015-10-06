@@ -20,7 +20,7 @@ using System.Web.Mvc;
 
 namespace CompanyRosterReg.WebUI.Controllers
 {
-    //BEW FIX THIS USED TO WORK (with NoCache!)
+    //BEW FIX THIS USED TO WORK (with NoCache!) We may not need to prevent Back button, but if you ever want to this is the "MVC way", that is, by using a Filter Attribute.
     //[NoCache]
     //[OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
     public class BaseController : Controller

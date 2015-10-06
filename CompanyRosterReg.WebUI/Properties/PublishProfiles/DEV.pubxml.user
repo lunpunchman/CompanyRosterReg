@@ -79,16 +79,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/28/2015 15:56:38</publishTime>
     </File>
     <File Include="bin/CompanyRosterReg.Domain.dll">
-      <publishTime>09/22/2015 11:57:30</publishTime>
+      <publishTime>10/06/2015 14:20:26</publishTime>
     </File>
     <File Include="bin/CompanyRosterReg.Domain.pdb">
-      <publishTime>09/22/2015 11:57:30</publishTime>
+      <publishTime>10/06/2015 14:20:25</publishTime>
     </File>
     <File Include="bin/CompanyRosterReg.WebUI.dll">
-      <publishTime>09/30/2015 15:09:02</publishTime>
+      <publishTime>10/06/2015 14:20:26</publishTime>
     </File>
     <File Include="bin/CompanyRosterReg.WebUI.pdb">
-      <publishTime>09/30/2015 15:09:02</publishTime>
+      <publishTime>10/06/2015 14:20:26</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>07/31/2015 10:44:52</publishTime>
@@ -238,7 +238,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/26/2015 12:00:24</publishTime>
     </File>
     <File Include="Views/Account/CreateAccount.cshtml">
-      <publishTime>09/29/2015 12:23:21</publishTime>
+      <publishTime>09/30/2015 15:19:41</publishTime>
     </File>
     <File Include="Views/Account/ForgotPassword.cshtml">
       <publishTime>09/22/2015 13:15:53</publishTime>
@@ -256,7 +256,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/30/2015 13:50:01</publishTime>
     </File>
     <File Include="Views/Account/NewAccount.cshtml">
-      <publishTime>09/30/2015 14:04:05</publishTime>
+      <publishTime>10/06/2015 14:17:16</publishTime>
     </File>
     <File Include="Views/Account/ResetPassword.cshtml">
       <publishTime>09/22/2015 15:04:02</publishTime>
@@ -280,7 +280,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/29/2015 15:47:22</publishTime>
     </File>
     <File Include="Views/Shared/AccountEditor.cshtml">
-      <publishTime>09/29/2015 15:44:14</publishTime>
+      <publishTime>09/30/2015 15:27:37</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>09/22/2015 15:01:54</publishTime>
@@ -301,7 +301,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/31/2015 10:38:32</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/30/2015 15:09:03</publishTime>
+      <publishTime>10/06/2015 14:20:27</publishTime>
     </File>
   </ItemGroup>
 </Project>
