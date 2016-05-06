@@ -177,7 +177,9 @@ namespace CompanyRosterReg.WebUI.Controllers
                             string storeAuthURL = "http://members.brewersassociation.org/store/StoreAuth.aspx?name1=" + invitationModel.Username +
                                                                                                     "&name2=" + invitationModel.Password +
                                                                                                     "&RedirectToAccount=1";
-                            if (Properties.Settings.Default.useDEV) storeAuthURL += "&useDEV=1"; 
+#if DEBUG
+                            storeAuthURL += "&useDEV=1";
+#endif
                             return new RedirectResult(storeAuthURL);
                         }
                     }

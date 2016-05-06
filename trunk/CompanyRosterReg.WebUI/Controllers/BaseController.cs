@@ -33,9 +33,7 @@ namespace CompanyRosterReg.WebUI.Controllers
         protected bool isAuthorized = false;
         protected string decryptedLink = null;
         protected BACrypto crypto = null;
-        protected readonly string rootURL = (Properties.Settings.Default.useDEV) ?
-                                            "http://companyrosterregdev.brewersassociation.org/Home/Index/" :
-                                            "http://companyrosterreg.brewersassociation.org/Home/Index/";
+        protected readonly string rootURL = Shared.rosterRegRootURL;
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public BaseController()
@@ -54,10 +52,13 @@ namespace CompanyRosterReg.WebUI.Controllers
             if (Properties.Settings.Default.debugRoute && Session["AlreadyInitializedRoute"] == null)
             {
                 Session["AlreadyInitializedRoute"] = true;
-                //BEW DEBUG - Set the id parameter that would be passed into the route here; i.e., just the encrypted part: "E61C33CF3700A314499952B514627DA5DD4B4D887E968B41BC6CDF66A62FE257BFF2B2299F0BD186317F7930FCFC6944F83A0C4A44390C39ACB78A32E60EDB115AB1D3CEB1E0D6208E152E3CE26DF5700ECB7EF12015159";
+                //BEW DEBUG ROUTE - Set the id parameter that would be passed into the route here; i.e., just the encrypted part: "E61C33CF3700A314499952B514627DA5DD4B4D887E968B41BC6CDF66A62FE257BFF2B2299F0BD186317F7930FCFC6944F83A0C4A44390C39ACB78A32E60EDB115AB1D3CEB1E0D6208E152E3CE26DF5700ECB7EF12015159";               
+#if DEBUG
                 RouteData.Values["id"] = "C47B2557D2339E6A523020CFFFD81BEA92ECD2A9BFCC6E862D05FF258790E9CD38A03F08C67F9EF00383484373C8DE7F60A3E7376EACB6B046A2F74BE3E2DA368C3C7CB16BA709239940434D2F9B2250583313AD4D9D760B52B3614EAA737B07943232B48DE4B59B62AEFE924F99615C";
-                //new user 2
-                //RouteData.Values["id"] = "561992D6228FFF0E1B27B7A36BEB011A4CA75A456CA586E296AD58FE1F223746CAC5D21635135CD1A748C1C644C7C82984AE8A22477F1A35BD1C185B66B06DACA3187BC03E79C5DCDA60231CF2AE6179ED92E224C50275316D5CCB9123799334";
+                RouteData.Values["id"] = "AEED169D62F8CBCDC29C3AE108F0D9C826A50E2C8E9B094446B130DFE69CBE7251CB6B55C93ED9498AE14D8C1C9F0B07B50139D8FDDE2A71B02B422F4C89E17996E54133A58F14F28C2D109693BD343EB05BECAD9AC9D576824003CFEDEAFF7BB39975602CDE2987A257D39E52D4176F";
+#elif DEBUGMASHTUN
+                RouteData.Values["id"] = "CC603351DC53EC44885FD0B15DC31FC7A8429CA65FFFC9B343A17F9A283B8356F1239B6D37AE17BF5C52F8A6E451606688A38B12925642A17FE88C32AA911317EC205BD9A6AB005821F475C3D5ACA78AF150479627CDAFC59E896B108298E8D9440873DB9608A63345647013E068B801";
+#endif
             }
 
             string id = null;
@@ -216,40 +217,47 @@ namespace CompanyRosterReg.WebUI.Controllers
 
         protected bool PopulateModel(LoginModel loginModel = null)
         {
-            if (decryptedLink != null && Invitation != null)
-            {
-                string imisID = GetLinkProperty("IMIS_ID");
-                GenericEntityData companyResult = SOA.GetIQAResults("$/JoinNow/CompanyByIMISID", imisID).FirstOrDefault();
-                string companyName = companyResult.GetEntityProperty("FullName");
-                Session["InvitationTitle"] = "Company Roster Registration for " + companyName;
-                string email = (loginModel != null && loginModel.Email != null) ? loginModel.Email : GetLinkProperty("Email");
-                GenericEntityData inviteeResults = GetInvitee(email);
-                string userName = String.Empty;
-                //username will only be pre-populated (i.e., in GetLinkProperty("userName")) if user clicked a password reset link sent from this website.
-                userName = (loginModel != null && loginModel.Username != null) ? loginModel.Username : GetLinkProperty("userName");
-                invitationModel = new InvitationModel
+            //try
+            //{
+                if (decryptedLink != null && Invitation != null)
                 {
-                    InvitationID = Invitation.InvitationID,
-                    InvitationIMIS_ID = imisID,
-                    InstituteName = companyName,
-                    SentDateTime = Convert.ToDateTime(GetLinkProperty("SentDateTime")),
-                    Email = email,
-                    AdditionalEmails = new List<string>() { String.Empty, String.Empty, String.Empty },
-                    InviteeIMIS_ID = inviteeResults.GetEntityProperty("ID"),
-                    InviteeCompanyID = inviteeResults.GetEntityProperty("CompanyID"),
-                    FirstName = inviteeResults.GetEntityProperty("FirstName"),
-                    MiddleName = inviteeResults.GetEntityProperty("MiddleName"),
-                    LastName = inviteeResults.GetEntityProperty("LastName"),
-                    MemberType = inviteeResults.GetEntityProperty("MemberType"),
-                    WorkPhone = companyResult.GetEntityProperty("WorkPhone"),
-                    ResetPassword = GetLinkProperty("passwordReset") == "passwordReset",
-                    Username = userName,
-                    Password = (loginModel != null) ? loginModel.Password : null,
-                    ATSMethod = (loginModel != null) ? loginModel.ATSMethod : ATS.Methods.NotInitialized 
-                };
-                invitationModel.HasIMISAccount = !(String.IsNullOrEmpty(invitationModel.InviteeIMIS_ID) || String.IsNullOrEmpty(invitationModel.MemberType));
-                return true;
-            }
+                    string imisID = GetLinkProperty("IMIS_ID");
+                    GenericEntityData companyResult = SOA.GetIQAResults("$/JoinNow/CompanyByIMISID", imisID).FirstOrDefault();
+                    string companyName = companyResult.GetEntityProperty("FullName");
+                    Session["InvitationTitle"] = "Company Roster Registration for " + companyName;
+                    string email = (loginModel != null && loginModel.Email != null) ? loginModel.Email : GetLinkProperty("Email");
+                    GenericEntityData inviteeResults = GetInvitee(email);
+                    string userName = String.Empty;
+                    //username will only be pre-populated (i.e., in GetLinkProperty("userName")) if user clicked a password reset link sent from this website.
+                    userName = (loginModel != null && loginModel.Username != null) ? loginModel.Username : GetLinkProperty("userName");
+                    invitationModel = new InvitationModel
+                    {
+                        InvitationID = Invitation.InvitationID,
+                        InvitationIMIS_ID = imisID,
+                        InstituteName = companyName,
+                        SentDateTime = Convert.ToDateTime(GetLinkProperty("SentDateTime")),
+                        Email = email,
+                        AdditionalEmails = new List<string>() { String.Empty, String.Empty, String.Empty },
+                        InviteeIMIS_ID = inviteeResults.GetEntityProperty("ID"),
+                        InviteeCompanyID = inviteeResults.GetEntityProperty("CompanyID"),
+                        FirstName = inviteeResults.GetEntityProperty("FirstName"),
+                        MiddleName = inviteeResults.GetEntityProperty("MiddleName"),
+                        LastName = inviteeResults.GetEntityProperty("LastName"),
+                        MemberType = inviteeResults.GetEntityProperty("MemberType"),
+                        WorkPhone = companyResult.GetEntityProperty("WorkPhone"),
+                        ResetPassword = GetLinkProperty("passwordReset") == "passwordReset",
+                        Username = userName,
+                        Password = (loginModel != null) ? loginModel.Password : null,
+                        ATSMethod = (loginModel != null) ? loginModel.ATSMethod : ATS.Methods.NotInitialized
+                    };
+                    invitationModel.HasIMISAccount = !(String.IsNullOrEmpty(invitationModel.InviteeIMIS_ID) || String.IsNullOrEmpty(invitationModel.MemberType));
+                    return true;
+                }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw new Exception("Could not retrieve invitee data.");
+            //}
             return false;
         }
 
