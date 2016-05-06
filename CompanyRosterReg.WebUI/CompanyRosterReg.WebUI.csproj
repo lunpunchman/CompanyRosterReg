@@ -41,63 +41,60 @@
   <ItemGroup>
     <Reference Include="Asi, Version=20.1.1.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Debug\Asi.dll</HintPath>
+      <HintPath>..\..\bin\Asi.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Business.ContentManagement">
-      <HintPath>..\..\bin\Debug\Asi.Business.ContentManagement.dll</HintPath>
-    </Reference>
-    <Reference Include="Asi.iBO">
-      <HintPath>..\..\bin\Debug\Asi.iBO.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Business.ContentManagement.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Lexicon">
-      <HintPath>..\..\bin\Debug\Asi.Lexicon.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Lexicon.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Membership, Version=20.2.1.235, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Debug\Asi.Membership.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Membership.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Soa.ClientServices, Version=20.1.1.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Debug\Asi.Soa.ClientServices.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Soa.ClientServices.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Soa.Commerce.Contracts, Version=20.1.1.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Debug\Asi.Soa.Commerce.Contracts.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Soa.Commerce.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Soa.Communications.Contracts, Version=20.1.1.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Debug\Asi.Soa.Communications.Contracts.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Soa.Communications.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Soa.Core">
-      <HintPath>..\..\bin\Debug\Asi.Soa.Core.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Soa.Core.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Soa.Core.Contracts, Version=20.1.1.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Debug\Asi.Soa.Core.Contracts.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Soa.Core.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Soa.Events.Contracts, Version=20.1.1.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Debug\Asi.Soa.Events.Contracts.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Soa.Events.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Soa.Fundraising.Contracts">
-      <HintPath>..\..\bin\Debug\Asi.Soa.Fundraising.Contracts.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Soa.Fundraising.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Soa.Membership.Contracts, Version=20.1.1.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Debug\Asi.Soa.Membership.Contracts.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Soa.Membership.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Soa.Membership.Domain">
-      <HintPath>..\..\bin\Debug\Asi.Soa.Membership.Domain.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Soa.Membership.Domain.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Soa.Nrds.Contracts">
-      <HintPath>..\..\bin\Debug\Asi.Soa.Nrds.Contracts.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Soa.Nrds.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Soa.ServiceModelEx, Version=20.1.1.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Debug\Asi.Soa.ServiceModelEx.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Soa.ServiceModelEx.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Web">
-      <HintPath>..\..\bin\Debug\Asi.Web.dll</HintPath>
+      <HintPath>..\..\bin\Asi.Web.dll</HintPath>
     </Reference>
     <Reference Include="BA.IMIS.Common">
       <HintPath>..\..\bin\BA.IMIS.Common.dll</HintPath>
@@ -112,7 +109,7 @@
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Debug\log4net.dll</HintPath>
+      <HintPath>..\..\bin\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MVC Foolproof Validation, Version=0.9.4517.16477, Culture=neutral, processorArchitecture=MSIL">
