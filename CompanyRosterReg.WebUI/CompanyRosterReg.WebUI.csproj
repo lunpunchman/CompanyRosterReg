@@ -46,12 +46,24 @@
     <Reference Include="Asi.Business.ContentManagement">
       <HintPath>..\..\bin\Asi.Business.ContentManagement.dll</HintPath>
     </Reference>
+    <Reference Include="Asi.Core">
+      <HintPath>..\..\bin\Asi.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Asi.Core.Data">
+      <HintPath>..\..\bin\Asi.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Asi.Core.Services.Interfaces">
+      <HintPath>..\..\bin\Asi.Core.Services.Interfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Asi.Lexicon">
       <HintPath>..\..\bin\Asi.Lexicon.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Membership, Version=20.2.1.235, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\bin\Asi.Membership.dll</HintPath>
+    </Reference>
+    <Reference Include="Asi.Membership.Data">
+      <HintPath>..\..\bin\Asi.Membership.Data.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Soa.ClientServices, Version=20.1.1.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -92,6 +104,9 @@
     <Reference Include="Asi.Soa.ServiceModelEx, Version=20.1.1.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\bin\Asi.Soa.ServiceModelEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Asi.TemplateManagement">
+      <HintPath>..\..\bin\Asi.TemplateManagement.dll</HintPath>
     </Reference>
     <Reference Include="Asi.Web">
       <HintPath>..\..\bin\Asi.Web.dll</HintPath>
