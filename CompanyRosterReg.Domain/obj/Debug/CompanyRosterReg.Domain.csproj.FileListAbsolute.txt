@@ -1,0 +1,10 @@
+C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\bin\CompanyRosterReg.Domain.dll.config
+C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\bin\CompanyRosterReg.Domain.dll
+C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\bin\CompanyRosterReg.Domain.pdb
+C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\bin\EntityFramework.dll
+C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\bin\EntityFramework.SqlServer.dll
+C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\bin\EntityFramework.xml
+C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\bin\EntityFramework.SqlServer.xml
+C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.dll
+C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.pdb
+C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.csprojResolveAssemblyReference.cache

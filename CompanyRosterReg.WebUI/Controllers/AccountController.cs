@@ -117,7 +117,7 @@ namespace CompanyRosterReg.WebUI.Controllers
                         //If invitee somehow used someone else's credentials, do not allow them to proceed. UnifiedLogin will return
                         //the IMIS ID but we have to go back and get the email address to verify it is actually the one intended by the invitee.
                         string verifyEmail = InvitationRepository.GetEmailByID(xmlDoc.Root.Element(xmlNamespace + "ID").Value);
-                        if (verifyEmail == null || verifyEmail != invitationModel.Email)
+                        if (verifyEmail == null || !verifyEmail.Equals(invitationModel.Email, StringComparison.InvariantCultureIgnoreCase))
                         {
                             return View("LoginFailed");
                         }
@@ -180,7 +180,8 @@ namespace CompanyRosterReg.WebUI.Controllers
 #if DEBUG
                             storeAuthURL += "&useDEV=1";
 #endif
-                            return new RedirectResult(storeAuthURL);
+                            return View("AddedToRoster");
+                            //return new RedirectResult(storeAuthURL);
                         }
                     }
                     else
