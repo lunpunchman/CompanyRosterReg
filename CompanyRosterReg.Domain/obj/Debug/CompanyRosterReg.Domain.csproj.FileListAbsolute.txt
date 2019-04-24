@@ -7,4 +7,3 @@ C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\bin\Entit
 C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\bin\EntityFramework.SqlServer.xml
 C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.dll
 C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.pdb
-C:\Users\mike.BA\Source\Repos\CompanyRosterReg\CompanyRosterReg.Domain\obj\Debug\CompanyRosterReg.Domain.csprojResolveAssemblyReference.cache

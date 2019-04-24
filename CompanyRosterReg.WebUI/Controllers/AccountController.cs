@@ -35,49 +35,55 @@ namespace CompanyRosterReg.WebUI.Controllers
             }
         }
 
+        public ActionResult AddedToRoster()
+        {
+            return new RedirectResult("https://www.brewersassociation.org/");
+        }
+
         public ActionResult ForgotPassword(int invitationID, string email, string contactID)
         {
-            if (invitationID == null || email == null || contactID == null) {
-                return RedirectToAction("NotAuthorized");            
-            }
-            else
-            {
-                string subject = "Brewers Association - Password Reset";
-                List<string> emailLines = new List<string>();
-                emailLines.Add("You are receiving this email because a password reset request was made at the Brewers Association Company Roster Registration portal.");
-                emailLines.Add("If you did not initiate this request, please ignore this email.");
-                emailLines.Add("Otherwise, to reset your password and proceed with the registration process, please click the link below:");
-                /* We are passing the decryptedLink back to BACrypto, which will append the results of GetWebUserName and also give us back the encrypted part of the link, which then gets passed
-                 * back into RouteValues["id"] when the intended recipient clicks on the new "reset password" link in the email. 
-                 */
-                decryptedLink = String.Concat(decryptedLink, "|passwordReset|userName=", Shared.GetWebUserName(email, contactID));
-                string authLink = crypto.GetEncryptedLink(decryptedLink);
-                /* We are updating the BA_CompanyRosterInvitation record with the modified "reset password" version of the encrypted/decrypted link so the intended email recipient
-                 * will be able to get back into this site.
-                 */
-                SQL.InsertUpdateInvitation(InvitationID: invitationID,
-                                            EncryptedLink: authLink,
-                                            DecryptedLink: decryptedLink,
-                                            ResetPassword: true);
-                if (Shared.SendEmail(subject, "info@brewersassociation.org", email,
-                                        Email.GetPlainTextBody(emailLines, authLink),
-                                        Email.GetHTMLBody(emailLines, authLink, rootURL)))
-                {
-                    return View(new ForgotPasswordModel { Email = email, Subject = subject });
-                }
-                else
-                {
-                    TempData["ErrorMsg"] = "Could not send email to " + email + ".";
-                    return View("Error");
-                }
-            }
+            return JavaScript("window.open('https://www.brewersassociation.org/membership/recover-credentials/')");
+            //if (invitationID == null || email == null || contactID == null) {
+            //    return RedirectToAction("NotAuthorized");
+            //}
+            //else
+            //{
+            //    string subject = "Brewers Association - Password Reset";
+            //    List<string> emailLines = new List<string>();
+            //    emailLines.Add("You are receiving this email because a password reset request was made at the Brewers Association Company Roster Registration portal.");
+            //    emailLines.Add("If you did not initiate this request, please ignore this email.");
+            //    emailLines.Add("Otherwise, to reset your password and proceed with the registration process, please click the link below:");
+            //    /* We are passing the decryptedLink back to BACrypto, which will append the results of GetWebUserName and also give us back the encrypted part of the link, which then gets passed
+            //     * back into RouteValues["id"] when the intended recipient clicks on the new "reset password" link in the email. 
+            //     */
+            //    decryptedLink = String.Concat(decryptedLink, "|passwordReset|userName=", Shared.GetWebUserName(email, contactID));
+            //    string authLink = crypto.GetEncryptedLink(decryptedLink);
+            //    /* We are updating the BA_CompanyRosterInvitation record with the modified "reset password" version of the encrypted/decrypted link so the intended email recipient
+            //     * will be able to get back into this site.
+            //     */
+            //    SQL.InsertUpdateInvitation(InvitationID: invitationID,
+            //                                EncryptedLink: authLink,
+            //                                DecryptedLink: decryptedLink,
+            //                                ResetPassword: true);
+            //    if (Shared.SendEmail(subject, "info@brewersassociation.org", email,
+            //                            Email.GetPlainTextBody(emailLines, authLink),
+            //                            Email.GetHTMLBody(emailLines, authLink, rootURL)))
+            //    {
+            //        return View(new ForgotPasswordModel { Email = email, Subject = subject });
+            //    }
+            //    else
+            //    {
+            //        TempData["ErrorMsg"] = "Could not send email to " + email + ".";
+            //        return View("Error");
+            //    }
+            //}
         }
 
         public ActionResult ResetPassword()
         {
             if (PopulateLoginModel())
             {
-                loginModel.ATSMethod = ATS.Methods.ResetPassword; 
+                loginModel.ATSMethod = ATS.Methods.ResetPassword;
                 return View(loginModel);
             }
             else
@@ -186,7 +192,7 @@ namespace CompanyRosterReg.WebUI.Controllers
                     }
                     else
                     {
-                        return View("LoginFailed"); 
+                        return View("LoginFailed");
                     }
                 }
             }
@@ -233,23 +239,50 @@ namespace CompanyRosterReg.WebUI.Controllers
 
         public ActionResult CreateAccount(InvitationModel model)
         {
+            Person person = new Person();
+            string customerType = string.Empty;
+            switch (model.MemberType)
+            {
+                case "SHOP":
+                    customerType = "AHAE";
+                    break;
+                case "NSHOP":
+                    customerType = "NAHAE";
+                    break;
+                default:
+                    customerType = "EMP"; //model.MemberType.StartsWith("N") ? "NEMP" : "EMP";
+                    break;
+            }
+            person.CustomerType = customerType;
+            person.FirstName = model.FirstName;
+            person.MiddleName = model.MiddleName ?? String.Empty;
+            person.LastName = model.LastName;
+            person.EmailAddress = model.Email;
+            person.Username = model.Username;
+            person.Password = model.Password;
+            person.WorkPhone = model.WorkPhone;
+            person.HomePhone = model.HomePhone ?? String.Empty;
+            person.InstituteName = model.InstituteName;
+            person.InstituteContactID = model.InvitationIMIS_ID;
+            BAResult baResult = new BAResult();
             ATSResult result = new ATSResult();
             if (Shared.CanAddContact(model.InvitationIMIS_ID, model.FirstName, model.LastName, model.Email))
             {
                 if (model.ATSMethod == ATS.Methods.CreateContact)
                 {
                     //this is the first time through (NotInitialized) so we know we have to do a Create
-                    result = Shared.CreateContact(model.FirstName,
-                                                    model.MiddleName ?? String.Empty,
-                                                    model.LastName,
-                                                    model.Email,
-                                                    model.Username,
-                                                    model.Password,
-                                                    model.WorkPhone,
-                                                    model.HomePhone ?? String.Empty,
-                                                    model.InstituteName,
-                                                    model.InvitationIMIS_ID
-                                                    );
+                    baResult = Shared.PostMyrcene("person", person);
+                    //result = Shared.CreateContact(model.FirstName,
+                    //                                model.MiddleName ?? String.Empty,
+                    //                                model.LastName,
+                    //                                model.Email,
+                    //                                model.Username,
+                    //                                model.Password,
+                    //                                model.WorkPhone,
+                    //                                model.HomePhone ?? String.Empty,
+                    //                                model.InstituteName,
+                    //                                model.InvitationIMIS_ID
+                    //                                );
                 }
             }
             else if (model.ATSMethod == ATS.Methods.UpdateContact)
@@ -257,23 +290,28 @@ namespace CompanyRosterReg.WebUI.Controllers
                 /* ATS wsContacts went ahead and created an account, even though one or more properties (such as "login id is already in use") were incorrect,
                  * so now we have to call it again and do an update. BUT....to do this, we need to find the ContactID from the account just created via an IQA.
                  */
-                string updateContactID = ((GenericEntityData)SOA.GetIQAResults("$/JoinNow/FindContactID", 
-                                                                                model.InvitationIMIS_ID, 
-                                                                                model.FirstName, 
-                                                                                model.LastName, 
-                                                                                model.Email).FirstOrDefault()).GetEntityProperty("ContactID");
-                result = Shared.UpdateContact(updateContactID, 
-                                                model.FirstName,
-                                                model.MiddleName ?? String.Empty,
-                                                model.LastName,
-                                                model.Email,
-                                                model.Username,
-                                                model.Password,
-                                                model.WorkPhone,
-                                                model.HomePhone ?? String.Empty,
-                                                model.InstituteName,
-                                                model.InvitationIMIS_ID
-                                                );
+
+
+                string updateContactID = SQL.GetContactID(model.InvitationIMIS_ID, model.FirstName, model.LastName, model.Email);
+                person.ContactID = updateContactID;
+                //((GenericEntityData)SOA.GetIQAResults("$/JoinNow/FindContactID", 
+                //                                                            model.InvitationIMIS_ID, 
+                //                                                            model.FirstName, 
+                //                                                            model.LastName, 
+                //                                                            model.Email).FirstOrDefault()).GetEntityProperty("ContactID");
+                baResult = Shared.PutMyrcene("person", person);
+                    //Shared.UpdateContact(updateContactID, 
+                    //                            model.FirstName,
+                    //                            model.MiddleName ?? String.Empty,
+                    //                            model.LastName,
+                    //                            model.Email,
+                    //                            model.Username,
+                    //                            model.Password,
+                    //                            model.WorkPhone,
+                    //                            model.HomePhone ?? String.Empty,
+                    //                            model.InstituteName,
+                    //                            model.InvitationIMIS_ID
+                    //                            );
             }
             else
             {
@@ -281,36 +319,45 @@ namespace CompanyRosterReg.WebUI.Controllers
                 model.ATSMethod = ATS.Methods.CreateContact;
             }
 
-            if (result.ResultCode == null)
+            if (baResult.ResultData == null)
             {
-                TempData["ErrorMsg"] = "An unexpected error was encountered while creating a new account. Please try again.";
+                TempData["ErrorMsg"] = baResult.ResultMessage; //"An unexpected error was encountered while creating a new account. Please try again.";
                 model.ATSMethod = ATS.Methods.CreateContact;
             }
-            else if (result.ResultCode != 0 && result.ResultMessage != String.Empty)
+            //reapply bandaid
+            else if (baResult.ResultMessage != String.Empty)
             {
-                /* BEW BAND AID! I have intermittently seen "The operation has timed out", but this may have had something to do with the Shared.GetWebResponse request.Timeout not being set to 
-                 * Timeout.Infinite, which it now IS set to. So what we'll do just in case it happens again, is assume that the ATS web service went ahead and created the account, so we're going 
-                 * to check to see if it actually happened, and if so, we'll attempt to login. 
-                 * The worst that should happen is that the login will fail.
-                 */
-                if (result.ResultMessage.ToLower().Contains("The operation has timed out"))
+                string resultMessage = Shared.GetMyrcene("person/email?email=" + person.EmailAddress).ResultMessage;
+                if (Shared.GetMyrcene("person/email?email="+person.EmailAddress).ResultMessage != "Not Found")
                 {
-                    if (Shared.FindContactID(model.InvitationIMIS_ID, model.FirstName, model.LastName, model.Email) != String.Empty)
-                    {
-                        return RedirectToAction("Login", model);
-                    }
+                    return View("AddedToRoster");
                 }
-
-                /* Otherwise, so far it looks like a non-zero ResultCode with a populated ResultMessage is the result of such cases as when a login ID is already in use, 
-                 * so redirect to UpdateAccount since the ATS webservice goes ahead and creates the account anyway.
-                 * And then all the user should need to do, for example, is update their loginID.
-                 */
-                TempData["ErrorMsg"] = result.ResultMessage;
-                model.ATSMethod = ATS.Methods.UpdateContact;
             }
+            //else if (result.ResultCode != 0 && result.ResultMessage != String.Empty)
+            //{
+            //    /* BEW BAND AID! I have intermittently seen "The operation has timed out", but this may have had something to do with the Shared.GetWebResponse request.Timeout not being set to 
+            //     * Timeout.Infinite, which it now IS set to. So what we'll do just in case it happens again, is assume that the ATS web service went ahead and created the account, so we're going 
+            //     * to check to see if it actually happened, and if so, we'll attempt to login. 
+            //     * The worst that should happen is that the login will fail.
+            //     */
+            //    if (result.ResultMessage.ToLower().Contains("The operation has timed out"))
+            //    {
+            //        if (Shared.FindContactID(model.InvitationIMIS_ID, model.FirstName, model.LastName, model.Email) != String.Empty)
+            //        {
+            //            return RedirectToAction("Login", model);
+            //        }
+            //    }
+
+            //    /* Otherwise, so far it looks like a non-zero ResultCode with a populated ResultMessage is the result of such cases as when a login ID is already in use, 
+            //     * so redirect to UpdateAccount since the ATS webservice goes ahead and creates the account anyway.
+            //     * And then all the user should need to do, for example, is update their loginID.
+            //     */
+            //    TempData["ErrorMsg"] = result.ResultMessage;
+            //    model.ATSMethod = ATS.Methods.UpdateContact;
+            //}
             else
             {
-                return RedirectToAction("Login", model);
+                return View("AddedToRoster");
             }
             return RedirectToAction("NewAccount", model);
         }

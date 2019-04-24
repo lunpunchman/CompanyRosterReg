@@ -42,7 +42,14 @@ namespace CompanyRosterReg.Domain.Concrete
 
         public string GetMemberTypeDesc(string type)
         {
-            return context.MemberTypes.Where(t => t.Member_Type == type).FirstOrDefault().Member_Type;
+            try
+            {
+                return context.MemberTypes.Where(t => t.Member_Type == type).FirstOrDefault().Member_Type;
+            }
+            catch
+            {
+                return "EMP";
+            }
         }
 
     }

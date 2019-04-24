@@ -16,6 +16,8 @@ using System.Reflection;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
+
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
 namespace CompanyRosterReg.WebUI.Controllers
@@ -53,11 +55,15 @@ namespace CompanyRosterReg.WebUI.Controllers
             {
                 Session["AlreadyInitializedRoute"] = true;
                 //BEW DEBUG ROUTE - Set the id parameter that would be passed into the route here; i.e., just the encrypted part: "E61C33CF3700A314499952B514627DA5DD4B4D887E968B41BC6CDF66A62FE257BFF2B2299F0BD186317F7930FCFC6944F83A0C4A44390C39ACB78A32E60EDB115AB1D3CEB1E0D6208E152E3CE26DF5700ECB7EF12015159";               
-#if DEBUG
+#if DEBUG                
                 //lun.michael@yahoo.com
-                RouteData.Values["id"] = "08B25E90A098CC72BAF387784C5FFC8D8724C0AE25F78B8685C2D3B67AF4AFDB7775E93093426A0D75D3FBAD0912CCCEEA9377A2A85A34FCB01D1C9A1FC435C2AE725463D596277FC4C3748946D9E7022345DEF491752014860812C8144DA6E72227426AD03D6B93633AA956AD77D62A";
+                //RouteData.Values["id"] = "D555440881A9D9391356C826ADF4475913F08BC6CA66C5758AD3B91D43B4C48408FD3C85D2C2DBC121DED5829579B8CBD3D15EA9C537865736833F427647CD85D8392FF8D3DC12C8DDBC1CD7F1D3A6650DD46069097648F42D0B1F5BE894685D573E79E6A932E450F743F2BFA5D09BAD";
+                RouteData.Values["id"] = "7705CD8DC4C9709A2A575ED31ECED37EBBFC2FC3A13CB993D135FC7693FB2DC2FF56C008ACF85A1BC674DDBC3BCD368CD99CFE101AAE383AD935B29951199F69791DD89907E46FD9860F41C76AF83BE1D50FABE318258F68C979554888EDEA0E25A595E4C8FEACC7994BF882E3918124";
+                //RouteData.Values["id"] = "7A69042157D7F3745F50C61E41CCC7A770D177B10420E3894FFC18B9B453B449E08731615366329FC6C7172DA19660EEAC419649FD3BB84C400B5B9033A9650B0144F61F61B45DB131E721D99F17BC5DC9DEF098EA4432C81B9BEE320C6360892E241173D9314B2166AF058BAE1A1120";
 #elif DEBUGMASHTUN
-                RouteData.Values["id"] = "CC603351DC53EC44885FD0B15DC31FC7A8429CA65FFFC9B343A17F9A283B8356F1239B6D37AE17BF5C52F8A6E451606688A38B12925642A17FE88C32AA911317EC205BD9A6AB005821F475C3D5ACA78AF150479627CDAFC59E896B108298E8D9440873DB9608A63345647013E068B801";
+                RouteData.Values["id"] = "219217C2E18AB6FB6EE7043D796F3709EA92D4DFAC89969567D1957BE44A3B017D868EA888A18B22232D4437FEA56296DBA10F2945753D85C83C067F7679E74658EE32DE88F177FEDA144FF5117CD6B538DA2C0905EC889D57C2D669ACE4EE4BA0746246F1C861064B2AEBCCCEA7BA26";
+#else
+                RouteData.Values["id"] = "CF67D6679D9F22D4389C951A5E19E9BA17C05F0760706FEED87EDF0E2F405D0B5EF386C57D51E2B24F8B2AF05CFA13B3719D7266C09384D7ED99C2B20266A03CA6E7C6E29AF7EC2CB4CD4BC8F98924FB2FADBA57D8F7495BAEC2CFBD829FC953F364CD206B9E0B442619CA4FC09FD2B7";            
 #endif
             }
 
@@ -179,20 +185,43 @@ namespace CompanyRosterReg.WebUI.Controllers
             return String.Empty;
         }
 
-        private GenericEntityData GetInvitee(string Email)
+        private Person GetInvitee(string Email)
         {
             //Return the NM, EMP, or NEMP record first if exists, otherwise return other member types, such as AHA, etc.
-            List<GenericEntityData> results = Shared.FindNonCompanyByEmail(Email);
+            BAResult result = Shared.GetMyrcene("person/email?email="+Email);
             List<string> validMemberTypes = new List<string>() { "EMP", "NEMP", "NM" };
-            GenericEntityData primaryResult = results.Where(r => validMemberTypes.Contains(r.GetEntityProperty("MemberType"))).FirstOrDefault();
-            if (primaryResult != null)
+            List<Person> persons = new List<Person>();
+            if (result.ResultData != null)
             {
-                return primaryResult;
+                persons = JsonConvert.DeserializeAnonymousType(result.ResultData.ToString(), new List<Person>());
+                Person person = persons.Where(r => validMemberTypes.Contains(r.CustomerType)).FirstOrDefault();
+                if (person != null)
+                {
+                    return person;
+                }
+                else
+                {
+                    return persons.FirstOrDefault();
+                }
             }
             else
             {
-                return results.FirstOrDefault();
+                return new Person();
             }
+                  
+
+
+            //List<GenericEntityData> results = Shared.FindNonCompanyByEmail(Email);
+            //List<string> validMemberTypes = new List<string>() { "EMP", "NEMP", "NM" };
+            //GenericEntityData primaryResult = results.Where(r => validMemberTypes.Contains(r.GetEntityProperty("MemberType"))).FirstOrDefault();
+            //if (primaryResult != null)
+            //{
+            //    return primaryResult;
+            //}
+            //else
+            //{
+            //    return results.FirstOrDefault();
+            //}
         }
 
         protected bool PopulateLoginModel(string MatchedEmailAddress = null)
@@ -205,7 +234,7 @@ namespace CompanyRosterReg.WebUI.Controllers
                 loginModel = new LoginModel
                 {
                     InvitationID = Invitation.InvitationID,
-                    InviteeIMIS_ID = GetInvitee(email).GetEntityProperty("ID"),
+                    InviteeIMIS_ID = GetInvitee(email).ContactID,
                     Email = email,
                     /* Username will only be populated in the auth link if user clicked a "password reset" link sent from this website (i.e., it will not be included in the original invitation link sent by the company admin). */
                     Username = GetLinkProperty("userName") 
@@ -222,11 +251,16 @@ namespace CompanyRosterReg.WebUI.Controllers
                 if (decryptedLink != null && Invitation != null)
                 {
                     string imisID = GetLinkProperty("IMIS_ID");
-                    GenericEntityData companyResult = SOA.GetIQAResults("$/JoinNow/CompanyByIMISID", imisID).FirstOrDefault();
-                    string companyName = companyResult.GetEntityProperty("FullName");
-                    Session["InvitationTitle"] = "Company Roster Registration for " + companyName;
+                    BAResult result = Shared.GetMyrcene("company/" + imisID);
+                    Models.Company company = JsonConvert.DeserializeAnonymousType(Shared.GetMyrcene("company/" + imisID).ResultData.ToString(), new Models.Company());
+
+                    //MYRCENE GenericEntityData companyResult = SOA.GetIQAResults("$/JoinNow/CompanyByIMISID", imisID).FirstOrDefault();
+                    //string companyName = companyResult.GetEntityProperty("FullName");
+                    Session["InvitationTitle"] = "Company Roster Registration for " + company.InstituteName;
                     string email = (loginModel != null && loginModel.Email != null) ? loginModel.Email : GetLinkProperty("Email");
-                    GenericEntityData inviteeResults = GetInvitee(email);
+                    //MYRCENE
+                    Person inviteeResults = GetInvitee(email);
+                    //GenericEntityData inviteeResults = GetInvitee(email);
                     string userName = String.Empty;
                     //username will only be pre-populated (i.e., in GetLinkProperty("userName")) if user clicked a password reset link sent from this website.
                     userName = (loginModel != null && loginModel.Username != null) ? loginModel.Username : GetLinkProperty("userName");
@@ -234,17 +268,17 @@ namespace CompanyRosterReg.WebUI.Controllers
                     {
                         InvitationID = Invitation.InvitationID,
                         InvitationIMIS_ID = imisID,
-                        InstituteName = companyName,
+                        InstituteName = company.InstituteName,
                         SentDateTime = Convert.ToDateTime(GetLinkProperty("SentDateTime")),
                         Email = email,
                         AdditionalEmails = new List<string>() { String.Empty, String.Empty, String.Empty },
-                        InviteeIMIS_ID = inviteeResults.GetEntityProperty("ID"),
-                        InviteeCompanyID = inviteeResults.GetEntityProperty("CompanyID"),
-                        FirstName = inviteeResults.GetEntityProperty("FirstName"),
-                        MiddleName = inviteeResults.GetEntityProperty("MiddleName"),
-                        LastName = inviteeResults.GetEntityProperty("LastName"),
-                        MemberType = inviteeResults.GetEntityProperty("MemberType"),
-                        WorkPhone = companyResult.GetEntityProperty("WorkPhone"),
+                        InviteeIMIS_ID = inviteeResults.ContactID, //GetEntityProperty("ID"),
+                        InviteeCompanyID = inviteeResults.InstituteContactID, //GetEntityProperty("CompanyID"),
+                        FirstName = inviteeResults.FirstName, //GetEntityProperty("FirstName"),
+                        MiddleName = inviteeResults.MiddleName, //GetEntityProperty("MiddleName"),
+                        LastName = inviteeResults.LastName, //GetEntityProperty("LastName"),
+                        MemberType = inviteeResults.CustomerType, //GetEntityProperty("MemberType"),
+                        WorkPhone = company.WorkPhone,//companyResult.GetEntityProperty("WorkPhone"),
                         ResetPassword = GetLinkProperty("passwordReset") == "passwordReset",
                         Username = userName,
                         Password = (loginModel != null) ? loginModel.Password : null,
@@ -302,6 +336,33 @@ namespace CompanyRosterReg.WebUI.Controllers
         {
             return View();
         }
+
+        public static ATSResult CreateContact(string FirstName, string MiddleName, string LastName, string EmailAddress, string Username, string Password,
+                                        string WorkPhone, string HomePhone, string InstituteName, string InstituteContactID)
+        {
+            string atsRootURL = "http://webservices.brewersassociation.org/wsContacts.asmx/";
+            try
+            {
+                //BEW Apparently HtmlEncoding parameters isn't enough to make this go through, but then we probably won't need to accommodate those cases anyway.
+                string URL = string.Format("{0}createContact?FirstName={1}&MiddleName={2}&LastName={3}&EmailAddress={4}&Username={5}&Password={6}" + //populated parameters
+                                            "&WorkPhone={7}&HomePhone={8}&InstituteName={9}&InstituteContactID={10}" +
+                                            "&CustomerType=EMP" + //the only hardcoded value so far
+                                            "&BillingCategory=&Title=&BirthDate=&Fax=&Informal=&Suffix=&Prefix=&Chapter=&MailCode=" + //stuff we aren't populating but have to pass the params since wsContacts/createContact expects them
+                                            "&ExcludeFromDirectory=&Gender=&Website=&Designation=&AuthUsername=&AuthPassword=&Address1=&Address2=&Address3=&City=&StateProvince=&Zip=&Country=",
+                                            atsRootURL, FirstName, MiddleName, LastName, EmailAddress, HttpUtility.HtmlEncode(Username), HttpUtility.HtmlEncode(Password),
+                                            WorkPhone, HomePhone, HttpUtility.HtmlEncode(InstituteName), InstituteContactID);
+
+                //URL.Replace("&#39;", "'");
+                URL = URL.Replace("&#39;", "'");
+                return Shared.GetATSResult(URL);
+            }
+            catch (Exception ex)
+            {
+                Shared.LogError(ex);
+            }
+            return new ATSResult();
+        }
+
 
     }
 }

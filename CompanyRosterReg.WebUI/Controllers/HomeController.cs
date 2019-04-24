@@ -6,6 +6,7 @@ using CompanyRosterReg.Domain.Entities;
 using CompanyRosterReg.WebUI.Attributes;
 using CompanyRosterReg.WebUI.Infrastructure;
 using CompanyRosterReg.WebUI.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -70,8 +71,11 @@ namespace CompanyRosterReg.WebUI.Controllers
             if (populatedEmails != null && populatedEmails.Count() > 0) { //BEW FIX THIS? replace with client validation!
                 foreach (string email in populatedEmails)
                 {
-                    GenericEntityData result = SOA.GetIQAResults("$/JoinNow/FindNonCompanyByEmail", email).FirstOrDefault();
-                    if (result != null)
+                    BAResult result = Shared.GetMyrcene("person/email?email=" + email);
+                    List<Person> persons = JsonConvert.DeserializeAnonymousType(result.ResultData.ToString(), new List<Person>());
+                    //GenericEntityData result = SOA.GetIQAResults("$/JoinNow/FindNonCompanyByEmail", email).FirstOrDefault();
+                    //if (result != null)
+                    if (persons.Count() > 0)
                     {
                         return RedirectToAction("FoundMatch", "Account", new { matchedEmailAddress = email });
                     }
